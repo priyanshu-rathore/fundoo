@@ -1,0 +1,130 @@
+.signin-form{
+
+margin-top: 10rem;
+border: 1px solid rgb(214, 212, 212);
+padding: 1rem 2rem;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 20%;
+padding-right: 5rem;
+
+
+}
+
+.sign-in-text{
+    position: relative;
+    top: 2rem;
+}
+
+form div{
+    width: 20vw;
+}
+
+p{
+    color: #5f6368;
+    font-size: 14px;
+    line-height: 1.4286;
+    margin-top: 32px;
+    position: relative;
+    left: 1.5rem;
+}
+
+h5{
+    border-radius: 4px;
+    color: #1a73e8;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: .25px;
+    outline: 0;
+    cursor: pointer;
+    font-size: inherit;
+    text-align: left;
+    margin: -2px -3px;
+    padding: 2px 3px;
+    border: 0;
+    right: 4rem;
+}
+
+.item{
+    width: 20rem;
+}
+
+.forgot-email{
+    color: #1a73e8;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: .25px;
+    outline: 0;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: inherit;
+    text-align: left;
+    margin: 6px -3px;
+    padding: 2px 3px;
+    border: 0;
+    right: -2rem;
+    top: 1rem;
+}
+
+.item:first-child{
+    margin-top: 2rem;
+}
+
+.email-or-phone{
+    margin-bottom: 1rem;
+}
+
+.continue{
+    margin-top: -1rem;
+    position: relative;
+    right: 1.5rem;
+}
+
+.create-account{
+margin-top: 4rem;
+margin-bottom: 1rem;
+}
+
+.create-account h5{
+    position: relative;
+    right: 4rem;
+}
+
+.btn{
+    position: relative;
+    left: 7rem;
+}
+
+h2{
+    font-size: 24px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-top: -1rem;
+}
+
+.signin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+img{
+    width: 100px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.learn-more{
+    position: relative;
+    left: 1rem;
+}
