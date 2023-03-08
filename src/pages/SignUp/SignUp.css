@@ -62,20 +62,38 @@ h2{
 }
 
 .username{
-    width: 30.5rem;
+    width: 29rem;
 }
 
 .fifth{
     margin-top: -1.5rem;
+    position: relative;
+    top: 1rem;
 }
 
 .sixth{
     display: flex;
     margin-top: -2rem;
+    position: relative;
+    top:2rem ;
 }
 
 .sixth div{
     margin-right: 5px;
+}
+
+.text{
+    position: relative;
+    left: 1rem;
+}
+
+
+
+.text p{
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .eight{

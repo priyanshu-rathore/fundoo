@@ -1,0 +1,84 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(216, 211, 211);
+    padding: .5rem 1rem;
+}
+
+.left-nav{
+    display: flex;
+
+}
+
+.left-nav div{
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-nav{
+    display: flex;
+}
+
+.right-nav div{
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar{
+    position: relative;
+    left: 7rem;
+    width: 100%;
+    padding: 0 15px;
+    border-radius: 7px;
+    background-color: #eceff5;
+}
+
+.icon{
+    color: #5f6368;
+    cursor: pointer;
+}
+
+.search-bar input{
+    margin-left: 1rem;
+    border: none;
+    background: none;
+    outline: none;
+    width: 35rem;
+    font: normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.search-icon{
+    color: #5f6368;
+}
+
+.brand-text p {
+    position:absolute;
+    left: 8.5rem;
+    top: -.8rem;
+    font-family: "Product Sans",Arial,sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    padding-left: 8px;
+    color: #5f6368;
+}
+
+.brand-logo img{
+    width: 35px;
+}
+
+.brand-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
