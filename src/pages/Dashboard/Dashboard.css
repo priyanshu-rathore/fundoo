@@ -1,0 +1,9 @@
+.boxes{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    /* border: 1px solid black;
+    width: 70vw;
+    margin-left: 20%;
+    margin-top: 100px; */
+}

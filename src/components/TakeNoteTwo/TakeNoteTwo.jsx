@@ -10,31 +10,44 @@ import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import ClickAwayListener from '@mui/base/ClickAwayListener';
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+import { addNotes } from "../../services/dataservice";
+import ColorPopper from "../ColorPopper/ColorPopper";
+
+
 const TakeNoteTwo = ({setDisplay}) => {
+  const [data,setData] = React.useState({title:"",description:"",isArchived:false,color:""})
+
+  const submit = async () =>{
+    // console.log("Notes added successfully")
+   let response = await addNotes(data)
+   console.log(response)
+   
+  }
   return (
-    <ClickAwayListener onClickAway={()=>setDisplay(true)}>
-    <div className="takeNoteTwo">
+    <ClickAwayListener onClickAway={()=>{setDisplay(true);submit()}}>
+    <div className="takeNoteTwo" style={{backgroundColor:data.color}}>
       <div className="toptakenotetwo">
-        <input type="text" placeholder="Title" />
+        <input type="text" placeholder="Title" onChange={e=>setData((prev)=>({...prev,title:e.target.value}))} />
         <PushPinOutlinedIcon className="icontwo"/>
       </div>
       <div className="middletakenotetwo">
-        <textarea placeholder="Take a note..."/>
+        <TextareaAutosize placeholder="Take a note..." onChange={e=>setData((prev)=>({...prev,description:e.target.value}))} />
       </div>
       <div className="bottomtakenotetwo">
         <div className="iconstakenotetwo">
         <AddAlertOutlinedIcon  className="icontwo"/>
         <PersonAddAltOutlinedIcon className="icontwo"/>
-        <ColorLensOutlinedIcon className="icontwo"/>
+        <ColorPopper  className="icontwo" action="create" setData={setData} />
         <InsertPhotoOutlinedIcon className="icontwo"/>
-        <ArchiveOutlinedIcon className="icontwo"/>
+        <ArchiveOutlinedIcon className="icontwo" onClick={()=>setData((prev)=>({...prev,isArchived:!prev.isArchived}))}/>
         <MoreVertOutlinedIcon className="icontwo"/>
         <UndoOutlinedIcon className="ico"/>
         <RedoOutlinedIcon className="ico"/>
 
         </div>
         <div className="close">
-            <span>Close</span>
+            <span onClick={()=>{setDisplay(true);submit()}}>Close</span>
         </div>
       </div>
     </div>

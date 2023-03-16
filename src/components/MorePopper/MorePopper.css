@@ -1,0 +1,17 @@
+.more-list{
+    list-style-type: none;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.more-list-item{
+    cursor: pointer;
+    width: max-content;
+    padding: auto;
+    margin-top: .5rem;
+   
+}
+

@@ -3,6 +3,8 @@ import Header from "../../components/Header/Header"
 import TakeNoteTwo from '../../components/TakeNoteTwo/TakeNoteTwo'
 import TakeNoteOne from '../../components/TakeNoteOne/TakeNoteOne'
 import { getNotes } from '../../services/dataservice'
+import TakeNoteThree from '../../components/TakeNoteThree/TakeNoteThree'
+import "./Dashboard.css"
 
 const Dashboard = () => {
 
@@ -13,12 +15,21 @@ const Dashboard = () => {
     }
     const loadData = async() => {
         let data = await getNotes()
-       setNotes(data.data.data.data)
+        data = data.data.data.data
+        data = data.filter(dt=>dt.isDeleted==true)
+        console.log(data)
+       setNotes(data)
   
     }
+
+    const autoRefresh = () =>{
+      loadData()
+    }
+
     React.useEffect(()=> {
        loadData()
-    },[])
+
+    })
   return (
     <div>
         <Header/>
@@ -26,8 +37,11 @@ const Dashboard = () => {
         <TakeNoteOne listenToTakeNoteOne={listenToTakeNoteOne}  /> 
         :
         <TakeNoteTwo setDisplay={setDisplay}/> }
-        <div>
-        {notes.map((obj)=><div>{obj.title}</div>)}
+        <div className='boxes'>
+          {/* <TakeNoteThree/> */}
+            {notes.map((note)=><TakeNoteThree notes={notes} title={note.title} description={note.description} color={note.color} id={note.id}
+            autoRefresh={autoRefresh} 
+            />)}
         </div>
         
     </div>
