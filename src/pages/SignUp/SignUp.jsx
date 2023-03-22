@@ -159,7 +159,13 @@ const SignUp = () => {
   if(emailTest && firstNameTest && lastNameTest && passwordTest){
   
 
-    await userSignUp(signUpObj)
+   let response = await userSignUp(signUpObj)
+    console.log(response)
+    if(response.status == 200){
+      alert("User Created Successfully")
+    }else{
+      alert("Error while creating user")
+    }
   }
   
 }
@@ -255,10 +261,10 @@ const SignUp = () => {
             </div>
             <div className="eight">
                 <div className="sign-in-instead">
-                  <Link to='/'><h5>Sign in instead</h5></Link> 
+                  <Link to='/' style={{textDecoration:"none"}}><h5>Sign in instead</h5></Link> 
                 </div>
                 <div className="next">
-                <Button variant="contained" onClick={submit}>Next</Button>
+             <Button variant="contained" onClick={submit}>Next</Button>
                 </div>
             </div>
           </div>

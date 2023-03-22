@@ -79,7 +79,7 @@ const TakeNoteThree = ({title,description,color,id,autoRefresh}) => {
   }
 
   const deleteNote = async () => {
-    let delNote = {noteIdList:[id],isDeleted:false}
+    let delNote = {noteIdList:[id],isDeleted:true}
     console.log(delNote)
     let response = await trashNotes(delNote)
     console.log(response)

@@ -1,0 +1,21 @@
+.MuiDrawer-paper{
+    margin-top: 57px;
+}
+
+.css-uxa1ks-MuiListItem-root:hover{
+    background-color: #feefc3 !important;
+    border-radius: 0 25px 25px 0;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    border: none !important;
+}
+
+.css-1m5i5w0-MuiButtonBase-root-MuiListItemButton-root:hover{
+    background: none !important;;
+}
+
+.css-1fqi8hc-MuiButtonBase-root-MuiListItemButton-root:hover{
+    background: none !important;
+    
+}

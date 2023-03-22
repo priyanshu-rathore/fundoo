@@ -66,9 +66,10 @@ const SignIn = () => {
             let response = await Signin(SignInObj)
             console.log(response.data,"ll")
             localStorage.setItem("token",response?.data?.id)
+            window.location.reload(true)
           }
     }
-
+ 
   return (
     <div className='signin'>
         <form action="submit" className='signin-form'>
@@ -101,7 +102,7 @@ const SignIn = () => {
             <div className="bottom">
                 <div className="create-account">
                  <Link to="/signup"><h5>Create account</h5></Link> 
-                    <Button onClick={submit} variant="contained" className='btn' >Next</Button>
+                 <Link to="/dashboard" onClick={submit} style={{textDecoration:"none"}}><Button  variant="contained" className='btn' >Next</Button></Link>
                 </div>
             </div>
         </form>

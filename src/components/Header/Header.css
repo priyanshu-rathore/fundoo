@@ -61,19 +61,26 @@
     color: #5f6368;
 }
 
+.brand-text{
+    width: 12px;
+    height: 40px;
+}
+
 .brand-text p {
-    position:absolute;
+    /* position:absolute;
     left: 8.5rem;
-    top: -.8rem;
+    top: -.8rem; */
     font-family: "Product Sans",Arial,sans-serif;
     font-size: 22px;
-    line-height: 24px;
-    padding-left: 8px;
+    /* line-height: 24px;
+    padding-left: 8px; */
     color: #5f6368;
+    vertical-align: middle; 
 }
 
 .brand-logo img{
     width: 35px;
+    vertical-align: middle;
 }
 
 .brand-text{
