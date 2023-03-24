@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/priyanshu-rathore/fundoo/static/css/main.68093cf3.css",
+    "main.js": "/priyanshu-rathore/fundoo/static/js/main.89df8d45.js",
+    "index.html": "/priyanshu-rathore/fundoo/index.html",
+    "main.68093cf3.css.map": "/priyanshu-rathore/fundoo/static/css/main.68093cf3.css.map",
+    "main.89df8d45.js.map": "/priyanshu-rathore/fundoo/static/js/main.89df8d45.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68093cf3.css",
+    "static/js/main.89df8d45.js"
+  ]
+}
