@@ -13,6 +13,7 @@ import ClickAwayListener from '@mui/base/ClickAwayListener';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { addNotes } from "../../services/dataservice";
 import ColorPopper from "../ColorPopper/ColorPopper";
+import { Card } from "@mui/material";
 
 
 const TakeNoteTwo = ({setDisplay}) => {
@@ -26,7 +27,8 @@ const TakeNoteTwo = ({setDisplay}) => {
   }
   return (
     <ClickAwayListener onClickAway={()=>{setDisplay(true);submit()}}>
-    <div className="takeNoteTwo" style={{backgroundColor:data.color}}>
+    {/* <div className="takeNoteTwo" style={{backgroundColor:data.color}}> */}
+    <Card className="takeNoteTwo" style={{backgroundColor:data.color}} sx={{width:{xs:'80%',md:'30%',sm:'60%',lg:'30%'}}}>
       <div className="toptakenotetwo">
         <input type="text" placeholder="Title" onChange={e=>setData((prev)=>({...prev,title:e.target.value}))} />
         <PushPinOutlinedIcon className="icontwo"/>
@@ -50,7 +52,8 @@ const TakeNoteTwo = ({setDisplay}) => {
             <span onClick={()=>{setDisplay(true);submit()}}>Close</span>
         </div>
       </div>
-    </div>
+      </Card>
+    {/* </div> */}
     </ClickAwayListener>
   );
 };

@@ -1,13 +1,13 @@
 const initialState={
-    title:"notes"
+    title:"Notes"
     }
 
     const navReducer=(state=initialState,action)=>{
 
         switch(action.type){
-                case "notes" : return {title:"notes"}
-                case "archive" : return {title:"archive"}
-                case "trash" : return {title:"trash"}
+                case "notes" : return {title:"Notes"}
+                case "archive" : return {title:"Archive"}
+                case "trash" : return {title:"Trash"}
         
                 default: return state 
         }

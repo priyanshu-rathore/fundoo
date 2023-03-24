@@ -1,9 +1,8 @@
 .takeNoteOne{
-    width: 10rem;
+    width: 30%;
     border: 1px solid rgb(184, 179, 179);
     display: flex;
     justify-content: space-between;
-    width: 30%;
     margin: 0 auto;
     padding: .5rem 1rem;
     border-radius: 7px;

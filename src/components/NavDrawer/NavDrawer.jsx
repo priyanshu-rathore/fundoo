@@ -99,9 +99,9 @@ function NavDrawer(props) {
   
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex' }} style={{position:'static'}}>
       
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} sx={{zIndex:1}}>
        
         <List>
             <ListItem key="notes" disablePadding sx={{ display: 'block' }}>

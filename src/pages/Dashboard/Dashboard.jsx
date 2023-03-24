@@ -22,24 +22,24 @@ const Dashboard = () => {
       //   data = data.filter(dt=>dt.isDeleted==true)
       //   console.log(data)
       //  setNotes(data)
-      if(typeOfNotes == "notes"){
+      if(typeOfNotes === "notes"){
         // setNotes(data)
-        setNotes(data.filter((noteObj)=>noteObj.isArchived == false && noteObj.isDeleted == false))
+        setNotes(data.filter((noteObj)=>noteObj.isArchived === false && noteObj.isDeleted === false))
 
-      }else if(typeOfNotes == "archive"){
-        setNotes(data.filter((noteObj)=>noteObj.isArchived == true && noteObj.isDeleted == false))
-      } else  if(typeOfNotes == "trash"){
-        setNotes(data.filter((noteObj)=>noteObj.isArchived == false && noteObj.isDeleted == true))
+      }else if(typeOfNotes === "archive"){
+        setNotes(data.filter((noteObj)=>noteObj.isArchived === true && noteObj.isDeleted === false))
+      } else  if(typeOfNotes === "trash"){
+        setNotes(data.filter((noteObj)=>noteObj.isArchived === false && noteObj.isDeleted === true))
       }
   
     }
 
-    const autoRefresh = () =>{
-      loadData()
-    }
+   
 
     React.useEffect(()=> {
-       loadData()
+       
+        loadData()
+       
     },[typeOfNotes])
 
     
@@ -59,7 +59,6 @@ const Dashboard = () => {
         <div className='boxes'>
           {/* <TakeNoteThree/> */}
             {notes.map((note)=><TakeNoteThree notes={notes} title={note.title} description={note.description} color={note.color} id={note.id}
-            autoRefresh={autoRefresh} 
             />)}
           </div>
         </div>

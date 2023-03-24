@@ -28,28 +28,28 @@
     align-items: center;
 }
 
-.search-bar{
+/* .search-bar{
     position: relative;
     left: 7rem;
     width: 100%;
     padding: 0 15px;
     border-radius: 7px;
     background-color: #eceff5;
-}
+} */
 
 .icon{
     color: #5f6368;
     cursor: pointer;
 }
 
-.search-bar input{
+/* .search-bar input{
     margin-left: 1rem;
     border: none;
     background: none;
     outline: none;
     width: 35rem;
     font: normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif;
-}
+} */
 
 .profile img {
     width: 40px;
@@ -74,7 +74,7 @@
     font-size: 22px;
     /* line-height: 24px;
     padding-left: 8px; */
-    color: #5f6368;
+    color: #5f6368 !important;
     vertical-align: middle; 
 }
 
@@ -89,3 +89,13 @@
     justify-content: center;
     align-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .css-1kcggdq-MuiInputBase-root{
+        display: none !important;
+    }
+
+    body{
+        background-color: blue;
+    }
+  }

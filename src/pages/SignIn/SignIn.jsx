@@ -4,7 +4,9 @@ import Button from '@mui/material/Button';
 import "./SignIn.css"
 import { Link } from 'react-router-dom';
 import { Signin } from '../../services/service';
-const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+// const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 const SignIn = () => {
@@ -62,7 +64,7 @@ const SignIn = () => {
             }));
           }
 
-          if(emailTest == true && passwordTest == true){
+          if(emailTest === true && passwordTest === true){
             let response = await Signin(SignInObj)
             console.log(response.data,"ll")
             localStorage.setItem("token",response?.data?.id)
@@ -72,7 +74,7 @@ const SignIn = () => {
  
   return (
     <div className='signin'>
-        <form action="submit" className='signin-form'>
+        <form action="submit" className='signin-form' sx={{width:{xs:'100vw'}}}>
             <div className="logo">
                 <img src="https://e7.pngegg.com/pngimages/523/198/png-clipart-google-logo-google-search-google-play-google-text-logo.png" alt="" />
             </div>
@@ -80,12 +82,12 @@ const SignIn = () => {
                 <h2>Sign in</h2>
             </div>
             <div className="continue">
-                <p>to continue to Gmail</p>
+                <p>Use your google account</p>
             </div>
             <div className="email-or-phone">
             <TextField onChange={emailElement}  className='item' id="outlined-basic" size='small' label="Email or phone" variant="outlined" error={regexObj.emailError} helperText={regexObj.emailHelper}  />
             </div>
-            <div className="password">
+            <div className="passwords">
                 <TextField onChange={passwordElement} className='item' id='outlined-basic' size='small' label="Password" variant="outlined" type="password" helperText={regexObj.passwordHelper} error={regexObj.passwordHelper} />
             </div>
             <div className="forgot-email">

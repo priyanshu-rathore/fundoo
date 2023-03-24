@@ -8,7 +8,8 @@ import { userSignUp } from "../../services/service";
 import { Link } from "react-router-dom";
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 const nameRegex = /^[a-zA-Z]{2,}$/
-const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+// const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 
 
@@ -107,7 +108,7 @@ const SignUp = () => {
   let passwordTest = passwordRegex.test(signUpObj.password)
   let emailTest = emailRegex.test(signUpObj.email)
 
-  if(emailTest == false){
+  if(emailTest === false){
     setRegexObj((prevState)=>({
       ...prevState,emailError:true,emailHelper:"Enter correct username"
     }))
@@ -117,7 +118,7 @@ const SignUp = () => {
     }))
   }
 
-  if(firstNameTest == false){
+  if(firstNameTest === false){
     setRegexObj((prevState)=>({
       ...prevState,firstNameError:true,firstNameHelper:"Enter correct name"
     }))
@@ -127,7 +128,7 @@ const SignUp = () => {
     }))
   }
 
-  if(lastNameTest == false){
+  if(lastNameTest === false){
     setRegexObj((prevState)=>({
       ...prevState,lastNameError:true,lastNameHelper:"Enter correct name"
     }))
@@ -136,7 +137,7 @@ const SignUp = () => {
       ...prevState,lastNameError:false,lastNameHelper:""
     }))
   }
-  if(passwordTest == false){
+  if(passwordTest === false){
     setRegexObj((prevState)=>({
       ...prevState,passwordError:true,passwordHelper:"Enter correct password"
     }))
@@ -161,7 +162,7 @@ const SignUp = () => {
 
    let response = await userSignUp(signUpObj)
     console.log(response)
-    if(response.status == 200){
+    if(response.status === 200){
       alert("User Created Successfully")
     }else{
       alert("Error while creating user")
@@ -175,7 +176,7 @@ const SignUp = () => {
   return (
     <>
       <div className="sign-up">
-        <form action="submit">
+        <form action="submit" className="sign-up-form">
           <div className="left">
             <div className="logo">
               <img
@@ -196,6 +197,7 @@ const SignUp = () => {
                   label="First name"
                   variant="outlined"
                   size="small"
+                  className="first-name"
                   onChange={firstName}
                   error={regexObj.firstNameError}
                   helperText={regexObj.firstNameHelper}
@@ -207,6 +209,7 @@ const SignUp = () => {
                   label="Last name"
                   variant="outlined"
                   size="small"
+                  className="last-name"
                   onChange={lastName}
                   error={regexObj.lastNameError}
                   helperText={regexObj.lastNameHelper}
@@ -233,6 +236,7 @@ const SignUp = () => {
                   size="small"
                   type={type.typeOf}
                   label="Password"
+                  className="password"
                   onChange={password}
                   error={regexObj.passwordError}
                   helperText={regexObj.passwordHelper}
@@ -244,6 +248,7 @@ const SignUp = () => {
                   id="outlined-basic"
                   size="small"
                   type={type.typeOf}
+                  className='confirm-password'
                   label="Confirm"
                   onChange={confirmPassword}
                   error={regexObj.confirmPasswordError}

@@ -17,6 +17,7 @@ import Box from '@mui/material/Box';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { editNotes } from '../../services/dataservice';
 import { trashNotes } from '../../services/dataservice';
+import { Card } from '@mui/material';
 
 const TakeNoteThree = ({title,description,color,id,autoRefresh}) => {
   const [input,setInput] = React.useState(title)
@@ -87,7 +88,8 @@ const TakeNoteThree = ({title,description,color,id,autoRefresh}) => {
   
 
   return (
-    <div className='takenotethree' style={{backgroundColor:color}}>
+    // <div className='takenotethree' style={{backgroundColor:color}}>
+    <Card style={{backgroundColor:color,margin:'1rem',padding:'1rem',height:'100%'}}>
         <div className="toptakenotethree" onClick={()=>handleOpen({title:title,description:description,noteId:id})}>
           <input type="text" placeholder='Title' value={input}  onChange={changeInputHandler}/>
           <PushPinOutlinedIcon className='icon tnti'/>
@@ -95,10 +97,10 @@ const TakeNoteThree = ({title,description,color,id,autoRefresh}) => {
         <div className="middletakenotethree" onClick={()=>handleOpen({title:title,description:description,noteId:id})}>
           <TextareaAutosize placeholder='' onChange={changeDescHandler} value={desc} className="tarea"/>
         </div>
-        <div className="bottomtakenotethree">
+        <div className="bottomtakenotethree" style={{}}>
           <AddAlertOutlinedIcon  className="icon tnti"/>
         <PersonAddAltOutlinedIcon className="icon tnti"/>
-        <ColorPopper className="iconc tnti" action="edit" id={id}/>
+        <ColorPopper className="icon tnti" action="edit" id={id} style={{color:'black'}}/>
         <DeleteOutlineIcon onClick={deleteNote} className="icon tnti"/>
         
         <ArchiveOutlinedIcon className="icon tnti" onClick={submit}/>
@@ -118,7 +120,7 @@ const TakeNoteThree = ({title,description,color,id,autoRefresh}) => {
           <div className="bottomtakenotethree">
           <AddAlertOutlinedIcon  className="icon tnti"/>
         <PersonAddAltOutlinedIcon className="icon tnti"/>
-        <ColorPopper className="iconc tnti" action="edit" id={id}/>
+        <ColorPopper className="icon tnti" action="edit" id={id} style={{color:'black'}}/>
         {/* <InsertPhotoOutlinedIcon className="icon tnti"/> */}
         <DeleteOutlineIcon onClick={deleteNote} className="icon tnti"/>
         <ArchiveOutlinedIcon className="icon tnti" onClick={submit}/>
@@ -128,7 +130,8 @@ const TakeNoteThree = ({title,description,color,id,autoRefresh}) => {
         </div>
         </Box>
       </Modal>
-    </div>
+      </Card>
+    // </div>
   )
 }
 

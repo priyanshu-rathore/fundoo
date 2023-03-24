@@ -11,3 +11,6 @@
 .main-component{
     display: flex;
 }
+.right-main {
+    width: 100%;
+}
