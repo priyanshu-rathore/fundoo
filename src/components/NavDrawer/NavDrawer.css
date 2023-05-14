@@ -19,3 +19,13 @@
     background: none !important;
     
 }
+
+@media only screen and (max-width:600px) {
+    .nav-drawer{
+        position: static !important;
+    }
+
+    .css-h4y409-MuiList-root{
+        position: static !important;
+    }
+}

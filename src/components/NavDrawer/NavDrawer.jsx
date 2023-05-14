@@ -103,7 +103,7 @@ function NavDrawer(props) {
       
       <Drawer variant="permanent" open={open} sx={{zIndex:1}}>
        
-        <List>
+        <List className='nav-drawer'>
             <ListItem key="notes" disablePadding sx={{ display: 'block' }}>
               <ListItemButton onClick={()=>{setTypeOfNotes("notes"); props.dispatch({type:"notes"}) }}
                 sx={{
