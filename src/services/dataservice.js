@@ -2,7 +2,8 @@ import axios from'axios'
 
 let headerConfig  = {
     headers:{
-        Authorization: localStorage.getItem("token")
+        Authorization: localStorage.getItem("token"),
+        "Access-Control-Allow-Origin": "true"
     }
 }
 
