@@ -2,7 +2,7 @@ import axios from "axios";
 
 let headerConfig  = {
   headers:{
-      "Access-Control-Allow-Origin": "true"
+      "Access-Control-Allow-Origin": true
   }
 }
 
